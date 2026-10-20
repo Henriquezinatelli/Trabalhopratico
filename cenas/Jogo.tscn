@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://5ydl8765oiqr"]
+
+[ext_resource type="Script" uid="uid://b06skgp0bnevp" path="res://scripts/jogo.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bsii71ij2hk2e" path="res://cenas/Player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cd0evlglehxw3" path="res://cenas/Bateria.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bfr5wrdjeumfj" path="res://cenas/Inimigo.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://c56qucdt63mkb" path="res://cenas/Torreta.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://c8np415ukedyt" path="res://cenas/Portal.tscn" id="6"]
+
+[sub_resource type="RectangleShape2D" id="Ground"]
+size = Vector2(1600, 24)
+
+[sub_resource type="RectangleShape2D" id="P1"]
+size = Vector2(120, 10)
+
+[sub_resource type="RectangleShape2D" id="P2"]
+size = Vector2(100, 10)
+
+[node name="Jogo" type="Node2D" unique_id=1798074504]
+script = ExtResource("1")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=328883058]
+offset_right = 1600.0
+offset_bottom = 180.0
+mouse_filter = 2
+color = Color(0.45, 0.67, 0.86, 1)
+
+[node name="Player" parent="." unique_id=922121658 instance=ExtResource("2")]
+position = Vector2(57, 149)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1605573864]
+limit_left = 2
+limit_top = 0
+limit_right = 1602
+limit_bottom = 180
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="Chao" type="StaticBody2D" parent="." unique_id=2125494510]
+position = Vector2(800, 174)
+
+[node name="Visual" type="ColorRect" parent="Chao" unique_id=106637020]
+offset_left = -800.0
+offset_top = -12.0
+offset_right = 800.0
+offset_bottom = 12.0
+mouse_filter = 2
+color = Color(0.08, 0.12, 0.17, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao" unique_id=2075717948]
+shape = SubResource("Ground")
+
+[node name="Plataforma1" type="StaticBody2D" parent="." unique_id=118578364]
+position = Vector2(190, 125)
+
+[node name="Visual" type="ColorRect" parent="Plataforma1" unique_id=1321113397]
+offset_left = -60.0
+offset_top = -5.0
+offset_right = 60.0
+offset_bottom = 5.0
+mouse_filter = 2
+color = Color(0.08, 0.12, 0.17, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma1" unique_id=1304662616]
+shape = SubResource("P1")
+
+[node name="Plataforma2" type="StaticBody2D" parent="." unique_id=1301735205]
+position = Vector2(430, 110)
+
+[node name="Visual" type="ColorRect" parent="Plataforma2" unique_id=2046293236]
+offset_left = -53.0
+offset_top = 12.0
+offset_right = 47.0
+offset_bottom = 22.0
+mouse_filter = 2
+color = Color(0.08, 0.12, 0.17, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma2" unique_id=485973165]
+position = Vector2(-2, 17)
+shape = SubResource("P2")
+
+[node name="Plataforma3" type="StaticBody2D" parent="." unique_id=1744690432]
+position = Vector2(720, 130)
+
+[node name="Visual" type="ColorRect" parent="Plataforma3" unique_id=749705634]
+offset_left = -60.0
+offset_top = -5.0
+offset_right = 60.0
+offset_bottom = 5.0
+mouse_filter = 2
+color = Color(0.08, 0.12, 0.17, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma3" unique_id=2147037498]
+shape = SubResource("P1")
+
+[node name="Plataforma4" type="StaticBody2D" parent="." unique_id=1720396791]
+position = Vector2(1020, 115)
+
+[node name="Visual" type="ColorRect" parent="Plataforma4" unique_id=1650878416]
+offset_left = -49.0
+offset_top = 9.0
+offset_right = 51.0
+offset_bottom = 19.0
+mouse_filter = 2
+color = Color(0.08, 0.12, 0.17, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma4" unique_id=1929755464]
+position = Vector2(1, 14)
+shape = SubResource("P2")
+
+[node name="Plataforma5" type="StaticBody2D" parent="." unique_id=1290936567]
+position = Vector2(1320, 130)
+
+[node name="Visual" type="ColorRect" parent="Plataforma5" unique_id=732299775]
+offset_left = -60.0
+offset_top = -5.0
+offset_right = 60.0
+offset_bottom = 5.0
+mouse_filter = 2
+color = Color(0.08, 0.12, 0.17, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma5" unique_id=640810013]
+shape = SubResource("P1")
+
+[node name="Bateria1" parent="." unique_id=1176125809 instance=ExtResource("3")]
+position = Vector2(190, 108)
+
+[node name="Bateria2" parent="." unique_id=859737591 instance=ExtResource("3")]
+position = Vector2(425, 111)
+
+[node name="Bateria3" parent="." unique_id=1026977615 instance=ExtResource("3")]
+position = Vector2(719, 114)
+
+[node name="Bateria4" parent="." unique_id=1674326517 instance=ExtResource("3")]
+position = Vector2(1021, 113)
+
+[node name="Bateria5" parent="." unique_id=973026124 instance=ExtResource("3")]
+position = Vector2(1320, 114)
+
+[node name="Inimigo1" parent="." unique_id=839925713 instance=ExtResource("4")]
+position = Vector2(320, 148)
+distancia = 28.0
+velocidade = 9.0
+
+[node name="Inimigo2" parent="." unique_id=387603793 instance=ExtResource("4")]
+position = Vector2(850, 148)
+distancia = 35.0
+velocidade = 9.0
+
+[node name="Inimigo3" parent="." unique_id=490709903 instance=ExtResource("4")]
+position = Vector2(1187, 148)
+distancia = 30.0
+velocidade = 9.0
+
+[node name="Torreta1" parent="." unique_id=1350779051 instance=ExtResource("5")]
+position = Vector2(572, 147)
+
+[node name="Portal" parent="." unique_id=994201512 instance=ExtResource("6")]
+position = Vector2(1517, 135)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1390838593]
+
+[node name="FundoHUD" type="ColorRect" parent="HUD" unique_id=1549843117]
+offset_right = 320.0
+offset_bottom = 24.0
+mouse_filter = 2
+color = Color(0.04, 0.08, 0.13, 0.9)
+
+[node name="Vidas" type="Label" parent="HUD" unique_id=1681071061]
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 85.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(1, 0.25, 0.3, 1)
+theme_override_font_sizes/font_size = 10
+text = "VIDAS: 5"
+
+[node name="Tempo" type="Label" parent="HUD" unique_id=380632575]
+offset_left = 142.0
+offset_top = 3.0
+offset_right = 178.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "240"
+horizontal_alignment = 1
+
+[node name="Baterias" type="Label" parent="HUD" unique_id=553871791]
+offset_left = 236.0
+offset_top = 3.0
+offset_right = 315.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(0.7, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 10
+text = "BATERIAS: 0/5"
+
+[node name="Mensagem" type="Label" parent="HUD" unique_id=1571721268]
+visible = false
+offset_left = 40.0
+offset_top = 62.0
+offset_right = 280.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+text = "Mensagem"
+horizontal_alignment = 1

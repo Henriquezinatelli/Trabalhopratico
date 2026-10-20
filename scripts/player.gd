@@ -1,8 +1,10 @@
+
 extends CharacterBody2D
 
 const SPEED := 90.0
 const GRAVITY := 200.0
 const JUMP := -135.0
+
 var vidas := 5
 var spawn := Vector2.ZERO
 var invulneravel := 0.0
@@ -11,7 +13,9 @@ func _ready() -> void:
 	spawn = global_position
 
 func _physics_process(delta: float) -> void:
-	if get_parent().encerrado:
+	var fase = get_parent()
+
+	if fase.get("encerrado") == true:
 		velocity = Vector2.ZERO
 		return
 
@@ -31,8 +35,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	# O Sprite2D não precisa de animação para este projeto simples.
-	# Apenas vira para o lado em que o robô está andando.
 	if dir != 0:
 		$Sprite2D.flip_h = dir < 0
 
@@ -40,12 +42,19 @@ func _physics_process(delta: float) -> void:
 		perder_vida()
 
 func perder_vida() -> void:
-	if invulneravel > 0 or get_parent().encerrado:
+	var fase = get_parent()
+
+	if invulneravel > 0:
 		return
+
+	if fase.get("encerrado") == true:
+		return
+
 	vidas -= 1
-	get_parent().atualizar_hud()
+	fase.atualizar_hud()
+
 	if vidas <= 0:
-		get_parent().derrota()
+		fase.derrota()
 	else:
 		global_position = spawn
 		velocity = Vector2.ZERO
