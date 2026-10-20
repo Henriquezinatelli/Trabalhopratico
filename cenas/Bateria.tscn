@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cd0evlglehxw3"]
+
+[ext_resource type="Script" uid="uid://dwnc1ijjmhywj" path="res://scripts/bateria.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c58g1x82cqv2f" path="res://Arte/battery.svg" id="2"]
+
+[sub_resource type="CircleShape2D" id="S"]
+
+[node name="Bateria" type="Area2D" unique_id=1688200871]
+script = ExtResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2131679392]
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1948072037]
+shape = SubResource("S")

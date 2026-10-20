@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bfr5wrdjeumfj"]
+
+[ext_resource type="Script" uid="uid://dc100kt1wtum3" path="res://scripts/inimigo.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dgvcb6loeyii5" path="res://Arte/enemy_robot.svg" id="2"]
+
+[sub_resource type="RectangleShape2D" id="S"]
+size = Vector2(26, 24)
+
+[node name="Inimigo" type="Area2D" unique_id=1521531146]
+script = ExtResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1733672117]
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315039665]
+shape = SubResource("S")
