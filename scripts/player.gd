@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if dir != 0:
-		$Sprite2D.flip_h = dir < 0
+		$AnimatedSprite2D.flip_h = dir < 0
 
 	if global_position.y > 230:
 		perder_vida()
