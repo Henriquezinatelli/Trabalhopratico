@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Robozox: A Missão"
-run/main_scene="uid://bsii71ij2hk2e"
+run/main_scene="uid://5ydl8765oiqr"
 config/features=PackedStringArray("4.7")
 
 [display]

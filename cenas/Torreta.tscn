@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://c56qucdt63mkb"]
 
 [ext_resource type="Script" uid="uid://c3ylbkqtqhima" path="res://scripts/torreta.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://o0552tmwcdp6" path="res://Arte/turret_robot.svg" id="2"]
+[ext_resource type="Texture2D" uid="uid://dy0rlokutwaqo" path="res://Arte/tKbX9T.png" id="2_i1u2b"]
 
 [node name="Torreta" type="Node2D" unique_id=2069920797]
 script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=746199554]
-texture = ExtResource("2")
+position = Vector2(24, 2)
+scale = Vector2(0.13994958, 0.13521634)
+texture = ExtResource("2_i1u2b")
