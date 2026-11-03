@@ -24,9 +24,14 @@ func _physics_process(delta: float) -> void:
 
 	var dir := Input.get_axis("ui_left", "ui_right")
 	velocity.x = dir * SPEED
+	if velocity != Vector2.ZERO:
+		$AnimatedSprite2D.play("andar")
+	else:
+		$AnimatedSprite2D.play("parar")
 
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
+		$AnimatedSprite2D.play("pular")
 	else:
 		velocity.y = 0
 
